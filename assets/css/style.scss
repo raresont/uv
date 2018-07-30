@@ -1,0 +1,378 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Jul 29, 2018, 11:19:30 PM
+    Author     : Rares Andrei
+*/
+.alert {
+    padding: 20px;
+    background-color: #f44336;
+    color: white;
+}
+.succes {
+    padding: 20px;
+    background-color: #8bc34a;
+    color: white;
+}
+
+.closebtn {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.closebtn:hover {
+    color: black;
+}
+    .main .row{
+        //	padding: 0px;
+        //	margin: 0px;
+    }
+
+    /*Remove rounded coners*/
+
+    nav.sidebar.navbar {
+        border-radius: 0px;
+    }
+
+    nav.sidebar, .main{
+        -webkit-transition: margin 200ms ease-out;
+        -moz-transition: margin 200ms ease-out;
+        -o-transition: margin 200ms ease-out;
+        transition: margin 200ms ease-out;
+    }
+
+    /* Add gap to nav and right windows.*/
+    .main{
+        //	padding: 10px 10px 0 10px;
+    }
+
+    /* .....NavBar: Icon only with coloring/layout.....*/
+
+    /*small/medium side display*/
+    @media (min-width: 768px) {
+
+        /*Allow main to be next to Nav*/
+        .main{
+            //		position: absolute;
+            //	width: calc(100% - 40px); /*keeps 100% minus nav size*/
+            //		margin-left: 40px;
+            //		float: right;
+        }
+
+        /*lets nav bar to be showed on mouseover*/
+        nav.sidebar:hover + .main{
+            margin-left: 200px;
+        }
+
+        /*Center Brand*/
+        nav.sidebar.navbar.sidebar>.container .navbar-brand, .navbar>.container-fluid .navbar-brand {
+            margin-left: 0px;
+        }
+        /*Center Brand*/
+        nav.sidebar .navbar-brand, nav.sidebar .navbar-header{
+            text-align: center;
+            width: 100%;
+            margin-left: 0px;
+        }
+
+        /*Center Icons*/
+        nav.sidebar a{
+            padding-right: 13px;
+        }
+
+        /*adds border top to first nav box */
+        nav.sidebar .navbar-nav > li:first-child{
+            border-top: 1px #e5e5e5 solid;
+        }
+
+        /*adds border to bottom nav boxes*/
+        nav.sidebar .navbar-nav > li{
+            border-bottom: 1px #e5e5e5 solid;
+        }
+
+        /* Colors/style dropdown box*/
+        nav.sidebar .navbar-nav .open .dropdown-menu {
+            position: static;
+            float: none;
+            width: auto;
+            margin-top: 0;
+            background-color: transparent;
+            border: 0;
+            -webkit-box-shadow: none;
+            box-shadow: none;
+        }
+
+        /*allows nav box to use 100% width*/
+        nav.sidebar .navbar-collapse, nav.sidebar .container-fluid{
+            padding: 0 0px 0 0px;
+        }
+
+        /*colors dropdown box text */
+        .navbar-inverse .navbar-nav .open .dropdown-menu>li>a {
+            color: #777;
+        }
+
+        /*gives sidebar width/height*/
+        nav.sidebar{
+            width: 200px;
+            height: 100%;
+            margin-left: -160px;
+            float: left;
+            // z-index: 8000;
+            margin-bottom: 0px;
+        }
+
+        /*give sidebar 100% width;*/
+        nav.sidebar li {
+            width: 100%;
+        }
+
+        /* Move nav to full on mouse over*/
+        nav.sidebar:hover{
+            margin-left: 0px;
+        }
+        /*for hiden things when navbar hidden*/
+        .forAnimate{
+            opacity: 0;
+        }
+    }
+
+    /* .....NavBar: Fully showing nav bar..... */
+
+    @media (min-width: 1330px) {
+
+        /*Allow main to be next to Nav*/
+        .main{
+            width: calc(100% - 200px); /*keeps 100% minus nav size*/
+            margin-left: 200px;
+        }
+
+        /*Show all nav*/
+        nav.sidebar{
+            margin-left: 0px;
+            float: left;
+        }
+        /*Show hidden items on nav*/
+        nav.sidebar .forAnimate{
+            opacity: 1;
+        }
+    }
+
+    nav.sidebar .navbar-nav .open .dropdown-menu>li>a:hover, nav.sidebar .navbar-nav .open .dropdown-menu>li>a:focus {
+        color: #CCC;
+        background-color: transparent;
+    }
+
+    nav:hover .forAnimate{
+        opacity: 1;
+    }
+    section{
+        padding-left: 15px;
+    }
+
+
+
+    .select-sim {
+        width:100%;
+        height:30%;
+        line-height:22px;
+        vertical-align:middle;
+        position:relative;
+        background:white;
+        border:1px solid #ccc;
+        //  overflow:hidden;
+    }
+
+    .select-sim::after {
+        content:"▼";
+        font-size:0.5em;
+        font-family:arial;
+        position:absolute;
+        top:50%;
+        right:5px;
+        // transform:translate(0, -50%);
+    }
+
+    .select-sim:hover::after {
+        content:"";
+    }
+
+    .select-sim:hover {
+        // overflow:visible;
+    }
+
+    .select-sim:hover .options .option label {
+        display:inline-block;
+    }
+
+    .select-sim:hover .options {
+        background:white;
+        border:1px solid #ccc;
+        position:absolute;
+        top:-1px;
+        left:-1px;
+        width:100%;
+        height:128px;
+        overflow-y:scroll;
+    }
+
+    .select-sim .options .option {
+        // overflow:hidden;
+    }
+
+    .select-sim:hover .options .option {
+        height:122px;
+        // overflow:hidden;
+    }
+
+    .select-sim .options .option img {
+        vertical-align:middle;
+    }
+
+    .select-sim .options .option label {
+        display:none;
+    }
+
+    .select-sim .options .option input {
+        width:0;
+        height:0;
+        overflow:hidden;
+        margin:0;
+        padding:0;
+        float:left;
+        display:inline-block;
+        /* fix specific for Firefox */
+        position: absolute;
+        // left: -10000px;
+    }
+
+    .select-sim .options .option input:checked + label {
+        display:block;
+        width:100%;
+    }
+
+    .select-sim:hover .options .option input + label {
+        display:block;
+    }
+
+    .select-sim:hover .options .option input:checked + label {
+        background:#fffff0;
+    }    
+
+    .popup-group{
+        position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+        background-color: rgba(220, 220, 220, 0.51); display: none
+    }
+
+    /*.popupBoxWrapper{
+        width: 550px; margin: 50px auto; text-align: left; overflow: scroll; z-index: 1;
+    }*/
+
+    .popupBoxWrapper{
+        max-width: calc(60%); width: 100%; margin: 10% auto; text-align: left; max-height: calc(80%); overflow-x: hidden; z-index: 1;
+          margin: 70px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 5px;
+  //width: 30%;
+  position: relative;
+  transition: all 5s ease-in-out;
+  
+  
+      -webkit-box-shadow:0 0 20px blue; 
+    -moz-box-shadow: 0 0 20px blue; 
+    box-shadow:0 0 30px yellow;
+    }
+    .status1{
+      -webkit-box-shadow:0 0 20px blue; 
+    -moz-box-shadow: 0 0 20px blue; 
+    box-shadow:0 0 30px yellow;        
+        
+    }
+    .status2{
+      -webkit-box-shadow:0 0 20px blue; 
+    -moz-box-shadow: 0 0 20px red; 
+    box-shadow:0 0 30px yellow;        
+        
+    }
+    .status3{
+      -webkit-box-shadow:0 0 20px blue; 
+    -moz-box-shadow: 0 0 20px yellow; 
+    box-shadow:0 0 30px yellow;        
+        
+    }    
+    .popupBoxContent{
+        background-color: #FFF; padding: 15px; overflow: auto;
+    }
+
+
+    .popup-Header {
+        padding: 10px 16px;
+      //  background-color: #75b6cc;
+        color: white;
+    }    
+    .alert {
+        padding: 20px;
+        background-color: #f44336;
+        color: white;
+    }
+    .succes {
+        padding: 20px;
+        background-color: #8bc34a;
+        color: white;
+    }
+
+    .closebtn {
+        margin-left: 15px;
+        color: white;
+        font-weight: bold;
+        float: right;
+        font-size: 22px;
+        line-height: 20px;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    .closebtn:hover {
+        color: black;
+    }    
+
+    #searchBox{
+        height:100%;
+        padding-bottom:0px;
+        margin-bottom: 0px;
+        width:30%;
+        padding-top:10px;
+    }
+    li h4{
+        color: #f2f2ff;
+    }
+.saveBtn{
+    width: 30%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+	float:right;
+} 
+.close{
+    width: 30%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+	float:right;
+} 
